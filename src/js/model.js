@@ -98,6 +98,7 @@ export const addBookmark = recipe => {
   persistBookmarks();
 };
 
+
 export const deleteBookmark = function (id) {
   // Delete bookmark
   const index = state.bookmarks.findIndex(el => el.id === id);

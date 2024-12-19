@@ -12,3 +12,4 @@ dist/
 *.min.js
 *.log
 ".parcel-cache/"
+.parcel-cache/*
