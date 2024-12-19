@@ -1,0 +1,14 @@
+/node_modules/
+/build
+.dist
+/dist/
+/.parcel/
+/.parcel-cache/
+.parcel-cache/
+".parcel-cache/"
+.cache/
+.vscode/*
+dist/
+*.min.js
+*.log
+".parcel-cache/"
