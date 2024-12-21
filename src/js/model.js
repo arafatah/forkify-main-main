@@ -24,7 +24,6 @@ const createRecipeObject = data => {
     cookingTime: recipe.cooking_time,
     ingredients: recipe.ingredients,
     ...(recipe.key && { key: recipe.key }),
-    
   };
 };
 
@@ -98,7 +97,6 @@ export const addBookmark = recipe => {
   persistBookmarks();
 };
 
-
 export const deleteBookmark = function (id) {
   // Delete bookmark
   const index = state.bookmarks.findIndex(el => el.id === id);
@@ -125,7 +123,7 @@ const clearBookmarks = function () {
 };
 // clearBookmarks();
 
-export const uploadRecipe = async function (newRecipe) {
+ export const uploadRecipe = async function (newRecipe) {
   try {
     const ingredients = Object.entries(newRecipe)
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
@@ -137,6 +135,7 @@ export const uploadRecipe = async function (newRecipe) {
 
         return { quantity: quantity ? +quantity : null, unit, description };
       });
+      
     console.log(ingredients);
 
     const recipe = {
@@ -157,3 +156,6 @@ export const uploadRecipe = async function (newRecipe) {
     throw err;
   }
 };
+ 
+
+
