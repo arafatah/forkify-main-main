@@ -12,6 +12,7 @@ export default class View {
    * @author Arafat Hung
    * @todo Finish implementation
    */
+  
   render(data, render = true) {
     if (!data || data.length === 0) return this.renderError();
 
