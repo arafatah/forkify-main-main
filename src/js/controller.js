@@ -131,9 +131,17 @@ const controlAddRecipe = async function (newRecipe) {
     // Success message
     addRecipeView.renderMessage();
 
+    // Render bookmark view
+    bookmarksView.render(model.state.bookmarks);
+
+    // Change ID in URL
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
     // close form window
     setTimeout(() => {
-      addRecipeView.toggleWindow();
+      if (!addRecipeView._window.classList.contains('hidden'))
+        addRecipeView.toggleWindow();
+      // Remember to Don't USE Magic word
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error(err);
