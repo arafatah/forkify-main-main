@@ -12,7 +12,7 @@ export default class View {
    * @author Arafat Hung
    * @todo Finish implementation
    */
-  
+
   render(data, render = true) {
     if (!data || data.length === 0) return this.renderError();
 
@@ -96,6 +96,5 @@ export default class View {
   `;
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    
   }
 }
