@@ -136,10 +136,10 @@ class RecipeView extends View {
             <div class="recipe__quantity">${
               ing.quantity ? new Fraction(ing.quantity).toFraction(true) : ''
             }
-</div>
-            <div class="recipe__description">
-              <span class="recipe__unit">${ing?.unit}</span>
-            ${ing?.description}
+            </div>
+              <div class="recipe__description">
+                <span class="recipe__unit">${ing?.unit}</span>
+              ${ing?.description}
             </div>
         </li>`;
   }
