@@ -58,7 +58,7 @@ const controlRecipes = async function () {
 
 // controlRecipes();
 
-const controlSearchResults = async function () {
+const controlSearchResults = async function () { 
   try {
     // Get search query
     const query = searchView.getQuery();
