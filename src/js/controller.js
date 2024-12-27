@@ -82,8 +82,6 @@ const controlSearchResults = async function () {
 // controlSearchResults();
 
 const controlPagination = function (goToPage) {
-  console.log(goToPage);
-
   // Render search results
   resultsView.render(model.getSearchResultPage(goToPage));
 

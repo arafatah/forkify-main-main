@@ -7,7 +7,6 @@ class PaginationView extends View {
   addHandlerClick(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--inline');
-      console.log(btn);
       if (!btn) return;
 
       const goToPage = +btn.dataset.goto;
@@ -18,14 +17,14 @@ class PaginationView extends View {
 
   _generatePlusMarkup(curPage) {
     return `
-            <button class="btn--inline pagination__btn--next" data-goto="${
-              curPage + 1
-            }">
-              <span>Page ${curPage + 1}</span>
-              <svg class="search__icon">
-                <use href="${icons}#icon-arrow-right"></use>
-              </svg>
-            </button>`;
+        <button class="btn--inline pagination__btn--next" data-goto="${
+          curPage + 1
+        }">
+          <span>Page ${curPage + 1}</span>
+          <svg class="search__icon">
+            <use href="${icons}#icon-arrow-right"></use>
+          </svg>
+        </button>`;
   }
 
   _generateMinusMarkup(curPage) {
@@ -46,8 +45,6 @@ class PaginationView extends View {
     const numPages = Math.ceil(
       this._data.result.length / this._data.resultPerPage
     ); // 8 / 10 = 0.8 = 1 page
-
-    console.log(numPages);
 
     // Page 1, and there are other pages
     if (curPage === 1 && numPages > 1) {

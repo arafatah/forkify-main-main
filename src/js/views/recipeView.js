@@ -14,6 +14,13 @@ class RecipeView extends View {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
+  /**
+   * Add event listener for clicking on the serving update button
+   * @param {function} handler - The function to be called when the button is clicked
+   * @listens click
+   * @param {object} e - The event object
+   * @param {HTMLElement} e.target - The element that was clicked
+   */
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
