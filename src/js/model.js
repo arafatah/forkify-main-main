@@ -139,7 +139,18 @@ export const uploadRecipe = async function (newRecipe) {
         return { quantity: quantity ? +quantity : null, unit, description };
       });
 
-    console.log(ingredients);
+    if (!newRecipe.title)
+      throw new Error('Please add a recipe title.');
+    if (!newRecipe.sourceUrl)
+      throw new Error('Please add a recipe source url.');
+    if (!newRecipe.image)
+      throw new Error('Please add a recipe image.');
+    if (!newRecipe.publisher)
+      throw new Error('Please add a recipe publisher.');
+    if (!newRecipe.cookingTime)
+      throw new Error('Please add a recipe cooking time.');
+    if (!newRecipe.servings)
+      throw new Error('Please add a recipe servings.');
 
     const recipe = {
       title: newRecipe.title,
@@ -150,7 +161,6 @@ export const uploadRecipe = async function (newRecipe) {
       servings: +newRecipe.servings,
       ingredients,
     };
-    console.log(recipe);
 
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
     state.recipe = createRecipeObject(data);
